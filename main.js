@@ -159,7 +159,7 @@ const channelInfo = {
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
             newsletterJid: '120363161513685998@newsletter',
-            newsletterName: 'KnightBot MD',
+            newsletterName: 'SKYPER MD,
             serverMessageId: -1
         }
     }
@@ -200,7 +200,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             
             if (buttonId === 'channel') {
                 await sock.sendMessage(chatId, { 
-                    text: '📢 *Join our Channel:*\nhttps://whatsapp.com/channel/0029Va90zAnIHphOuO8Msp3A' 
+                    text: '📢 *Join our Channel:*\nhttps://whatsapp.com/channel/0029Vb6zh00FcowG8euO480M' 
                 }, { quoted: message });
                 return;
             } else if (buttonId === 'owner') {
@@ -209,7 +209,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 return;
             } else if (buttonId === 'support') {
                 await sock.sendMessage(chatId, { 
-                    text: `🔗 *Support*\n\nhttps://chat.whatsapp.com/GA4WrOFythU6g3BFVubYM7?mode=wwt` 
+                    text: `🔗 *Support*\n\nhttps://chat.whatsapp.com/LY3acjsThHV4FJEIRdzQDb?mode=hqrt3` 
                 }, { quoted: message });
                 return;
             }
@@ -282,7 +282,8 @@ async function handleMessages(sock, messageUpdate, printLog) {
             }
             // Antilink checks message text internally, so run it even if userMessage is empty
             await Antilink(message, sock);
-        }
+          // Grouplink checks message text internally, so run it even if userMessage is empty 
+          await Grouplink(message, sock);      }
 
         // PM blocker: block non-owner DMs when enabled (do not ban)
         if (!isGroup && !message.key.fromMe && !senderIsSudo) {
